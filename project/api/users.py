@@ -1,6 +1,6 @@
 from flask import Blueprint, request
 from flask_restplus import Api, Resource, fields  # updated
-from sqlalchemy import exc
+#from sqlalchemy import exc
 
 from project import db
 from project.api.models import User
