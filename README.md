@@ -3,5 +3,4 @@ This is my repo for the project documented at https://testdriven.io/courses/tdd-
 
 
 
-[![pipeline status](https://gitlab.com/karen.c.imperial/flask-tdd-docker/badges/master/pipeline.svg)](https://gitlab.com/karen.c.imperial/flask-tdd-docker/commits/master)
 
