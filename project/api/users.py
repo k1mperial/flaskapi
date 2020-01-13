@@ -1,49 +1,48 @@
-from sqlalchemy import exc
 from flask import Blueprint, request
-from flask_restplus import Resource, Api, fields # updated
+from flask_restplus import Api, Resource, fields  # updated
+from sqlalchemy import exc
 
 from project import db
 from project.api.models import User
 
-
-users_blueprint = Blueprint('users', __name__)
+users_blueprint = Blueprint("users", __name__)
 api = Api(users_blueprint)
 
 # new
-user = api.model('User', {
-    'id': fields.Integer(readOnly=True),
-    'username': fields.String(required=True),
-    'email': fields.String(required=True),
-    'created_date': fields.DateTime,
-})
+user = api.model(
+    "User",
+    {
+        "id": fields.Integer(readOnly=True),
+        "username": fields.String(required=True),
+        "email": fields.String(required=True),
+        "created_date": fields.DateTime,
+    },
+)
+
 
 class UsersList(Resource):
-    
     @api.marshal_with(user, as_list=True)
     def get(self):
         return User.query.all(), 200
 
-
-    @api.expect(user, validate=True) # new
+    @api.expect(user, validate=True)  # new
     def post(self):
         post_data = request.get_json()
-        username = post_data.get('username')
-        email = post_data.get('email')
+        username = post_data.get("username")
+        email = post_data.get("email")
         response_object = {}
 
         user = User.query.filter_by(email=email).first()
         if user:
-            response_object['message'] = 'Sorry. That email already exists.'
+            response_object["message"] = "Sorry. That email already exists."
             return response_object, 400
         db.session.add(User(username=username, email=email))
         db.session.commit()
-        response_object['message'] = f'{email} was added!'
+        response_object["message"] = f"{email} was added!"
         return response_object, 201
 
 
-
 class Users(Resource):
-
     @api.marshal_with(user)
     def get(self, user_id):
         user = User.query.filter_by(id=user_id).first()
@@ -52,5 +51,5 @@ class Users(Resource):
         return user, 200
 
 
-api.add_resource(UsersList, '/users')
-api.add_resource(Users, '/users/<int:user_id>')
+api.add_resource(UsersList, "/users")
+api.add_resource(Users, "/users/<int:user_id>")
