@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# flaskAPI
-Test-Driven Development with Python, Flask, and Docker
-=======
-# flaskapi
+# Test-Driven Development with Python, Flask, and Docker
+This is my repo for the project documented at https://testdriven.io/courses/tdd-flask/
 
->>>>>>> 9a3ad704cb05c91007ab71bfb24a57356c1e861e
