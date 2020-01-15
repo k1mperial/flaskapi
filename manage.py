@@ -3,7 +3,7 @@ import sys
 from flask.cli import FlaskGroup
 
 from project import create_app, db   # new
-from project.api.models import User  # new
+from project.api.users.models import User  # new
 
 
 app = create_app()  # new
