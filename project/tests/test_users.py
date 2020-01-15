@@ -1,7 +1,5 @@
-import json 
+import json
 import pytest
-
-# from project import db
 from project.api.models import User
 
 
