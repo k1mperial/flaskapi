@@ -1,13 +1,16 @@
 # project/api/users.py
 
-
 from flask import Blueprint, request
 from flask_restplus import Api, Resource, fields
 
-# new
-from project.api.services import (add_user, delete_user, get_all_users,
-                                  get_user_by_email, get_user_by_id,
-                                  update_user)
+from project.api.services import (
+    add_user,
+    delete_user,
+    get_all_users,
+    get_user_by_email,
+    get_user_by_id,
+    update_user,
+)
 
 users_blueprint = Blueprint("users", __name__)
 api = Api(users_blueprint)
