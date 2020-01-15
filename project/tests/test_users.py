@@ -1,4 +1,5 @@
-import json, pytest
+import json 
+import pytest
 
 # from project import db
 from project.api.models import User
@@ -135,7 +136,6 @@ def test_update_user(test_app, test_database, add_user):
     [1, {"email": "me@testdriven.io"}, 400, "Input payload validation failed"],
     [999, {"username": "me", "email": "me@testdriven.io"}, 404, "User 999 does not exist"],
 ])
-
 def test_update_user_invalid(
     test_app, test_database, user_id, payload, status_code, message
 ):
