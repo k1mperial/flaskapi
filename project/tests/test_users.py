@@ -129,11 +129,19 @@ def test_update_user(test_app, test_database, add_user):
     assert "me@testdriven.io" in data["email"]
 
 
-@pytest.mark.parametrize("user_id, payload, status_code, message", [
-    [1, {}, 400, "Input payload validation failed"],
-    [1, {"email": "me@testdriven.io"}, 400, "Input payload validation failed"],
-    [999, {"username": "me", "email": "me@testdriven.io"}, 404, "User 999 does not exist"],
-])
+@pytest.mark.parametrize(
+    "user_id, payload, status_code, message",
+    [
+        [1, {}, 400, "Input payload validation failed"],
+        [1, {"email": "me@testdriven.io"}, 400, "Input payload validation failed"],
+        [
+            999,
+            {"username": "me", "email": "me@testdriven.io"},
+            404,
+            "User 999 does not exist",
+        ],
+    ],
+)
 def test_update_user_invalid(
     test_app, test_database, user_id, payload, status_code, message
 ):
