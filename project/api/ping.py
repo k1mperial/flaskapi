@@ -1,13 +1,13 @@
-from flask import Blueprint
-from flask_restplus import Api, Resource
+# project/api/ping.py
 
-ping_blueprint = Blueprint("ping", __name__)
-api = Api(ping_blueprint)
+from flask_restplus import Resource, Namespace  # updated
+
+ping_namespace = Namespace("ping")  # new
 
 
 class Ping(Resource):
     def get(self):
-        return {"status": "success", "message": "pong"}
+        return {"status": "success", "message": "pong!"}
 
 
-api.add_resource(Ping, "/ping")
+ping_namespace.add_resource(Ping, "")  # updated
