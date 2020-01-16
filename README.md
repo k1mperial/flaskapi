@@ -5,9 +5,9 @@ This is my repo for the project documented at https://testdriven.io/courses/tdd-
 
 1. The project is a code along to building a RESTful API using test-driven development. These are the tools used to create it:
 
-Tools and Technologies
-Python
-Flask
+Tools and Technologies <br />
+Python <br />
+Flask <br />
 Docker
 Postgres
 Pytest
