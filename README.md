@@ -24,7 +24,7 @@ GitLab <br />
 Heroku <br />
 Swagger/OpenAPI <br />
 
-It is documented here: https://testdriven.io/courses/tdd-flask/ <br />
+
 
 2. Installed Flask along with Flask-RESTPlus and Dockerized the application along with a Postgres DB
 3. Once the 2 containers are up and application is reachable, started adding the unit tests and testing using Pytest
@@ -56,7 +56,7 @@ Log in to the Heroku Container Registry <br />
 Push the image up to the registry <br />
 Create a new release via the Heroku API using the image ID within the release.sh script <br />
 
-Go here to view the CI/CD jobs triggered by my commits to Gitlab : https://gitlab.com/karen.c.imperial/flaskapi/-/jobs <br />
+Go here to view the CI/CD jobs triggered by commits to Gitlab : https://gitlab.com/karen.c.imperial/flaskapi/-/jobs <br />
 
 9. Added more RESTful routes: DELETE and PUT. Parametarized test functions. Added Pytest monkeypatch fixture to mock functionality in tests. At this point I also disabled isort during the TEST stage because of conflicts with the Black formatting tool. 
 
