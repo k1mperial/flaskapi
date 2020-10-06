@@ -31,9 +31,9 @@ test:
     - postgres:latest
   variables:
     POSTGRES_DB: users
-    POSTGRES_USER: runner
+    POSTGRES_USER: 
     POSTGRES_PASSWORD: ""
-    DATABASE_TEST_URL: postgres://runner@postgres:5432/users
+    DATABASE_TEST_URL: postgres://r@postgres:5432/users
     FLASK_ENV: development  # new
   script:
     - python -m pytest "project/tests" -p no:warnings
